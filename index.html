@@ -27,7 +27,7 @@ objectives:
   <script src="./js/scripts.js"></script>
   <title>Programming Language Suggester</title>
 </head>
-<body>
+<body class="jumbotron">
   <!-- Header
   - make div box with box style and margins
     - style background with color
@@ -62,46 +62,59 @@ objectives:
   <div id="survey-questions" class="general-box">
     <h3>Survery Questions:</h3>
     <form id="survey-form">
-      <label for="name">What is your full name?</label>
-      <input type="text" id="name" name="name">
-      <br>
+      <div class="name-box container-fluid">
+        <label for="name">What is your full name?</label>
+        <br>
+        <input type="text" id="name" name="name"><span class="badge badge-success"></span>
+      </div>
 
-      Do you like snakes?
-      <label for="yes">yes</label>
-      <input type="radio" id="yes" name="radio-snakes" value="yes" checked>
-      <label for="no">no</label>
-      <input type="radio" id="no" name="radio-snakes" value="no">
-      <label for="unsure">unsure</label>
-      <input type="radio" id="unsure" name="radio-snakes" value="unsure">
-      <br>
+      <div class="container-fluid">
+        Do you like snakes?
+        <label for="yes">yes</label>
+        <input type="radio" id="yes" name="radio-snakes" value="yes" checked>
+        <label for="no">no</label>
+        <input type="radio" id="no" name="radio-snakes" value="no">
+        <label for="unsure">unsure</label>
+        <input type="radio" id="unsure" name="radio-snakes" value="unsure">
+      </div>
 
-      If you had to, what color would you choose out of the three below:
-      <label for="purple">purple</label>
-      <input type="radio" id="purple" name="radio-color" value="purple" checked>
-      <label for="blue">blue</label>
-      <input type="radio" id="blue" name="radio-color" value="blue">
-      <label for="yellow">yellow</label>
-      <input type="radio" id="yellow" name="radio-color" value="yellow">
-      <br>
+      <div class="container-fluid">
+        If you had to, what color would you choose out of the three below:
+        <label for="purple">purple</label>
+        <input type="radio" id="purple" name="radio-color" value="purple" checked>
+        <label for="blue">blue</label>
+        <input type="radio" id="blue" name="radio-color" value="blue">
+        <label for="yellow">yellow</label>
+        <input type="radio" id="yellow" name="radio-color" value="yellow">
+      </div>
 
-      Which of the lines of text do you prefer?
-      <br>
-      <label for="jsCode"><img src="./img/code1.png" alt="Picture of code."></label>
-      <input type="radio" id="jsCode" name="radio-codeImage" value="jsCode" checked>
-      <label for="pythonCode"><img src="./img/code2.png" alt="Picture of code."></label>
-      <input type="radio" id="pythonCode" name="radio-codeImage" value="pythonCode">
-      <label for="cSharpCode"><img src="./img/code3.png" alt="Picture of code."></label>
-      <input type="radio" id="cSharpCode" name="radio-codeImage" value="cSharpCode">
-      <br>
+      <div class="container-fluid">
+        Which of the lines of text do you prefer?
+        <div class="row code-box ">
+          <div class="col-4">
+            <label for="jsCode"><img src="./img/code1.png" alt="Picture of code." class="img-fluid"></label>
+            <input type="radio" id="jsCode" name="radio-codeImage" value="jsCode" checked>
+          </div>
+          <div class="col-4">
+            <label for="pythonCode"><img src="./img/code2.png" alt="Picture of code." class="img-fluid"></label>
+            <input type="radio" id="pythonCode" name="radio-codeImage" value="pythonCode">
+          </div>
+          <div class="col-4">
+            <label for="cSharpCode"><img src="./img/code3.png" alt="Picture of code." class="img-fluid"></label>
+            <input type="radio" id="cSharpCode" name="radio-codeImage" value="cSharpCode">
+          </div>
+        </div>
+      </div>
 
-      <label for="select-job">What job sounds fun to you?</label>
-      <select id="select-job" name="job">
-        <option value="Web Developer">Web Developer</option>
-        <option value="Data Engineer">Data Engineer</option>
-        <option value="Game Developer">Game Developer</option>
-      </select>
-      <br>
-      <button type="submit">Submit</button>
+      <div class="container-fluid">
+        <label for="select-job">What job sounds fun to you?</label>
+        <select id="select-job" name="job">
+          <option value="Web Developer">Web Developer</option>
+          <option value="Data Engineer">Data Engineer</option>
+          <option value="Game Developer">Game Developer</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
     </form>
   </div>
 
@@ -121,7 +134,7 @@ objectives:
     <h4>Based of your answers, we have determined you should learn:<span id="result"></span></h4>
     <div id="Python" class="hidden">
       <h4>Python</h4>
-      <img src="./img/pythonImg.png" alt="Picture of python meme.">
+      <img src="./img/pythonImg.png" alt="Picture of python meme." class="img-fluid">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
@@ -131,7 +144,7 @@ objectives:
     </div>
     <div id="JavaScript" class="hidden">
       <h4>JavaScript</h4>
-      <img src="./img/javascriptImg.jpg" alt="Picture of javascript meme.">
+      <img src="./img/javascriptImg.jpg" alt="Picture of javascript meme." class="img-fluid">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
@@ -141,7 +154,7 @@ objectives:
     </div>
     <div id="C#" class="hidden">
       <h4>C#</h4>
-      <img src="./img/csharpImg.png" alt="Picture of c-sharp meme.">
+      <img src="./img/csharpImg.png" alt="Picture of c-sharp meme." class="img-fluid">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 

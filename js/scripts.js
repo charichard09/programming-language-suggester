@@ -63,6 +63,31 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
 
 
 //UI logic
+function changeBackground(language) {
+  if (language === "Python") {
+    document.body.style.backgroundColor = "blue";
+    document.getElementById("header").style.backgroundColor = "yellow";
+    document.getElementById("header").style.color = "black";
+    document.querySelector("button").style.color = "black";
+    document.querySelector("button").style.backgroundColor = "yellow";
+    document.querySelector("button").style.borderColor = "black";
+  } else if (language === "C#") {
+    document.body.style.backgroundColor = "purple";
+    document.getElementById("header").style.backgroundColor = "white";
+    document.getElementById("header").style.color = "black";
+    document.querySelector("button").style.color = "black";
+    document.querySelector("button").style.backgroundColor = "white";
+    document.querySelector("button").style.borderColor = "black";
+  } else if (language === "JavaScript") {
+    document.body.style.backgroundColor = "yellow";
+    document.getElementById("header").style.backgroundColor = "black";
+    document.getElementById("header").style.color = "grey";
+    document.querySelector("button").style.color = "grey";
+    document.querySelector("button").style.backgroundColor = "black";
+    document.querySelector("button").style.borderColor = "black";
+  }
+}
+
 function getUserInput(event) {
   event.preventDefault();
   //hide results 
@@ -79,10 +104,12 @@ function getUserInput(event) {
 
   // get span object to (later, insert result to innerText)
   let resultSpan = document.getElementById("result");
-  
+  let result = resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput)
+
   // use user input to generate a result python, js, or c-sharp
-  resultSpan.innerText = resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput);
-  document.getElementById(resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput)).removeAttribute("class");
+  resultSpan.innerText = result;
+  document.getElementById(result).removeAttribute("class");
+  changeBackground(result);
 }
 
 window.addEventListener("load", function() {

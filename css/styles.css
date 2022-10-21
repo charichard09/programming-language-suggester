@@ -2,6 +2,10 @@ body {
   box-sizing: border-box;
 }
 
+.name-box {
+  text-align: center;
+}
+
 .hidden {
   display: none;
 }
@@ -14,7 +18,10 @@ body {
   background-color: rgb(184, 175, 175);
 }
 
-img {
-  width: 300px;
-  height: 400px;
+#header {
+  background-color: aqua;
+}
+
+.code-box {
+  vertical-align: auto;
 }
