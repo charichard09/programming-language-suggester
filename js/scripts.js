@@ -1,5 +1,60 @@
 //Business logic
+function resultGenerator(name, snake, color, codeImage, funJob) {
+  let pythonScore = 0;
+  let javaScriptScore = 0;
+  let cSharpScore = 0;
 
+  // write if statements for all 5 input results, each time adding to the Score of the 3 languages
+  //name
+  if (name.length < 10) {
+    pythonScore += 1;
+  } else if (name.length >= 10 && name.length <= 15) {
+    javaScriptScore += 1;
+  } else if (name.length > 15) {
+    cSharpScore += 1;
+  }
+  //snakes
+  if (snake === "yes") {
+    pythonScore += 1;
+  } else if (snake === "no") {
+    javaScriptScore += 1;
+    cSharpScore += 1;
+  }
+  //color
+  if (color === "purple") {
+    cSharpScore += 1;
+  } else if (color === "blue") {
+    pythonScore += 1;
+  } else if (color === "yellow") {
+    javaScriptScore += 1;
+  }
+  //codeImage
+  if (codeImage === "jsCode") {
+    javaScriptScore += 1;
+  } else if (codeImage === "pythonCode") {
+    pythonScore += 1;
+  } else if (codeImage === "cSharpCode") {
+    cSharpScore += 1;
+  }
+
+  //funJob
+  if (funJob === "Web Developer") {
+    javaScriptScore += 1;
+  } else if (funJob === "Data Engineer") {
+    pythonScore += 1;
+  } else if (funJob === "Game Developer") {
+    cSharpScore += 1;
+  }
+
+  // return the language with the highest score 
+  if (pythonScore > javaScriptScore && pythonScore > cSharpScore) {
+    return "Python";
+  } else if (javaScriptScore > pythonScore && javaScriptScore > cSharpScore) {
+    return "JavaScript";
+  } else if (cSharpScore > pythonScore && cSharpScore > javaScriptScore) {
+    return "C#";
+  }
+}
 
 //UI logic
 function getUserInput(event) {
@@ -15,7 +70,7 @@ function getUserInput(event) {
   let resultSpan = document.getElementById("result");
   
   // use user input to generate a result python, js, or c-sharp
-  resultSpan.innerText = nameInput + snakeYSInput + colorInput + codeImageInput + funJobInput;
+  resultSpan.innerText = resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput);;
 }
 
 window.addEventListener("load", function() {
