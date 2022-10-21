@@ -70,7 +70,9 @@ function getUserInput(event) {
   let resultSpan = document.getElementById("result");
   
   // use user input to generate a result python, js, or c-sharp
-  resultSpan.innerText = resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput);;
+  resultSpan.innerText = resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput);
+  document.getElementById(resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput)).removeAttribute("class");
+
 }
 
 window.addEventListener("load", function() {
