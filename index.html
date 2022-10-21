@@ -16,7 +16,6 @@ objectives:
 - webpage is styled with CSS
 
 -->
-
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -62,42 +61,42 @@ objectives:
   -->
   <div id="survey-questions" class="general-box">
     <h3>Survery Questions:</h3>
-    <form>
+    <form id="survey-form">
       <label for="name">What is your full name?</label>
       <input type="text" id="name" name="name">
       <br>
 
       Do you like snakes?
       <label for="yes">yes</label>
-      <input type="radio" id="yes" name="radio-snakes" value="1" checked>
+      <input type="radio" id="yes" name="radio-snakes" value="yes" checked>
       <label for="no">no</label>
-      <input type="radio" id="no" name="radio-snakes" value="0">
+      <input type="radio" id="no" name="radio-snakes" value="no">
       <br>
 
       If you had to, what color would you choose out of the three below:
       <label for="purple">purple</label>
-      <input type="radio" id="purple" name="radio-color" value="1" checked>
+      <input type="radio" id="purple" name="radio-color" value="purple" checked>
       <label for="blue">blue</label>
-      <input type="radio" id="blue" name="radio-color" value="0">
+      <input type="radio" id="blue" name="radio-color" value="blue">
       <label for="yellow">yellow</label>
-      <input type="radio" id="yellow" name="radio-color" value="0">
+      <input type="radio" id="yellow" name="radio-color" value="yellow">
       <br>
 
       Which of the lines of text do you prefer?
       <br>
       <label for="jsCode"><img src="./img/code1.png" alt="Picture of code."></label>
-      <input type="radio" id="jsCode" name="radio-color" value="1" checked>
+      <input type="radio" id="jsCode" name="radio-codeImage" value="jsCode" checked>
       <label for="pythonCode"><img src="./img/code2.png" alt="Picture of code."></label>
-      <input type="radio" id="pythonCode" name="radio-color" value="0">
-      <label for="c#code"><img src="./img/code3.png" alt="Picture of code."></label>
-      <input type="radio" id="c#code" name="radio-color" value="0">
+      <input type="radio" id="pythonCode" name="radio-codeImage" value="pythonCode">
+      <label for="cSharpCode"><img src="./img/code3.png" alt="Picture of code."></label>
+      <input type="radio" id="cSharpCode" name="radio-codeImage" value="cSharpCode">
       <br>
 
       <label for="select-job">What job sounds fun to you?</label>
       <select id="select-job" name="job">
-        <option value="1">Web Developer</option>
-        <option value="1">Data Engineer</option>
-        <option value="1">Game Developer</option>
+        <option value="WebDev">Web Developer</option>
+        <option value="DataEngineer">Data Engineer</option>
+        <option value="GameDev">Game Developer</option>
       </select>
       <br>
       <button type="submit">Submit</button>
@@ -109,7 +108,7 @@ objectives:
       > (non-MVP) add results i.e. <p>Question 1 answer: <span id="queston1Input">input result</span></p>
         > (non-MVP) add reasons why 1 vote for 1 language and not for another
           > add h1 "based on your results, you should learn:" > 
-          (non-MVP) add business logic:
+          add business logic:
           reveal result
             - make 3 divs class="hidden" id="python id="c-sharp" id="javascript" 
               - add img to each
@@ -117,7 +116,7 @@ objectives:
   -->
   <div id="survey-results" class="general-box">
     <h3>Survey Results</h3>
-    <h4>Based of your answers, we have determined you should learn:</h4>
+    <h4>Based of your answers, we have determined you should learn:<span id="result"></span></h4>
     <div id="python" class="hidden">
       <h4>Python</h4>
       <img src="./img/pythonImg.png" alt="Picture of python meme.">
