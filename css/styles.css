@@ -13,3 +13,8 @@ body {
   overflow: hidden;
   background-color: rgb(184, 175, 175);
 }
+
+img {
+  width: 300px;
+  height: 400px;
+}
