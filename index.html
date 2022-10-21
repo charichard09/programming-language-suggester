@@ -15,7 +15,7 @@ objectives:
 - variable names correct
 - webpage is styled with CSS
 
- -->
+-->
 
 <!DOCTYPE html>
 <html lang="en-US">
@@ -30,15 +30,36 @@ objectives:
 <body>
   
   <!-- Header
-    make div box with box style and margins
-      >style background with color
+  - make div box with box style and margins
+    - style background with color
   -->
 
-  <!-- 
+  <!-- Survey Questions 
+  - make h3 "Survery Questions"
+    - make a form with 5 questions
+      - make a box for text input label "what is your full name?" > if (input.length < 10) +1 python,
+          (input.length >= 10 && input.length <= 15) +1 c#, (input.length > 15) +1 js 
+        - make radio box with label "do you like snakes?" > make input elements for "yes" "no" 
+          > if yes checked, python +1, if no c# js +1
+            - make a radio box with label "what color would you prefer out of the 3" > make inputs elements for
+                "purple" "blue" "yellow" > if purple +1 c#, if blue +1 python, if yellow +1 js 
+              - make a radio box with label "what looks better to you?" > make input elements for 
+                  3 examples of code from python c# js > +1 value for checked
+                - make a select box with label "what job sounds good to you?" > make option elements for
+                    3 jobs in python c# js (game dev, data analyst, web dev)> +1 value for selected
+  -->
 
-   -->
+  <!-- Survery Results
+    - make div to enclose the 3 results > add h3 header "Survery Results"
+      > (non-MVP) add results i.e. <p>Question 1 answer: <span id="queston1Input">input result</span></p>
+        > (non-MVP) add reasons why 1 vote for 1 language and not for another
+          > add h1 "based on your results, you should learn:" > reveal result
+            - make 3 divs class="hidden" id="python id="c#" id="javascript" 
+              - add img to each
+                - add p element lorem ipsum content to each > (non-MVP) fill with real content
+  -->
 
-   <!--  Reminder if you've reached this point: Have you added a README.md? -->
+  <!--  Reminder if you've reached this point: Have you added a README.md? -->
 
   <!--  Double check MVP, if ready, branch to make a branch to play around with more fun styling, then 
     delete this and top intro comment, commit, push, then push to GitHub Pages-->
