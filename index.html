@@ -33,21 +33,78 @@ objectives:
   - make div box with box style and margins
     - style background with color
   -->
+  <div id="header" class="general-box">
+    <h1>Programming Language Suggester</h1>
+  </div>
+
 
   <!-- Survey Questions 
   - make h3 "Survery Questions"
-    - make a form with 5 questions
-      - make a box for text input label "what is your full name?" > if (input.length < 10) +1 python,
-          (input.length >= 10 && input.length <= 15) +1 c#, (input.length > 15) +1 js 
+    - make a form with 5 questions:
+      - make a box for text input label "what is your full name?" 
+          business logic:
+          if (input.length < 10) +1 python, (input.length >= 10 && input.length <= 15) +1 c#, (input.length > 15) +1 js 
         - make radio box with label "do you like snakes?" > make input elements for "yes" "no" 
-          > if yes checked, python +1, if no c# js +1
-            - make a radio box with label "what color would you prefer out of the 3" > make inputs elements for
-                "purple" "blue" "yellow" > if purple +1 c#, if blue +1 python, if yellow +1 js 
+          business logic:
+          if yes checked, python +1, if no c# js +1
+            - make a radio box with label "what color would you prefer out of the 3:" > make inputs elements for
+                "purple" "blue" "yellow" 
+                business logic:
+                if purple +1 c#, if blue +1 python, if yellow +1 js 
               - make a radio box with label "what looks better to you?" > make input elements for 
-                  3 examples of code from python c# js > +1 value for checked
+                  3 examples of code from python c# js 
+                  business logic:
+                  +1 value for checked
+
                 - make a select box with label "what job sounds good to you?" > make option elements for
-                    3 jobs in python c# js (game dev, data analyst, web dev)> +1 value for selected
+                    3 jobs in python c# js (game dev, data analyst, web dev)
+                    business logic: 
+                    +1 value for selected
   -->
+  <div id="survey-questions" class="general-box">
+    <h3>Survery Questions:</h3>
+    <form>
+      <label for="name">What is your full name?</label>
+      <input type="text" id="name" name="name">
+      <br>
+
+      Do you like snakes?
+      <label for="yes">yes</label>
+      <input type="radio" id="yes" name="radio-snakes" value="1" checked>
+      <label for="no">no</label>
+      <input type="radio" id="no" name="radio-snakes" value="0">
+      <br>
+
+      If you had to, what color would you choose out of the three below:
+      <label for="purple">purple</label>
+      <input type="radio" id="purple" name="radio-color" value="1" checked>
+      <label for="blue">blue</label>
+      <input type="radio" id="blue" name="radio-color" value="0">
+      <label for="yellow">yellow</label>
+      <input type="radio" id="yellow" name="radio-color" value="0">
+      <br>
+
+      Which of the lines of text do you prefer?
+      <br>
+      <label for="jsCode"><img src="./img/code1.png" alt="Picture of code."></label>
+      <input type="radio" id="jsCode" name="radio-color" value="1" checked>
+      <label for="pythonCode"><img src="./img/code2.png" alt="Picture of code."></label>
+      <input type="radio" id="pythonCode" name="radio-color" value="0">
+      <label for="c#code"><img src="./img/code3.png" alt="Picture of code."></label>
+      <input type="radio" id="c#code" name="radio-color" value="0">
+      <br>
+
+      <label for="select-job">What job sounds fun to you?</label>
+      <select id="select-job" name="job">
+        <option value="1">Web Developer</option>
+        <option value="1">Data Engineer</option>
+        <option value="1">Game Developer</option>
+      </select>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
 
   <!-- Survery Results
     - make div to enclose the 3 results > add h3 header "Survery Results"
