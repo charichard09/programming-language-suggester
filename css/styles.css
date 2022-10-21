@@ -1,0 +1,15 @@
+body {
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+.general-box {
+  margin: 2px;
+  border: solid black 2px;
+  padding: 2px;
+  overflow: hidden;
+  background-color: rgb(184, 175, 175);
+}
