@@ -55,7 +55,6 @@ objectives:
                   3 examples of code from python c# js 
                   business logic:
                   +1 value for checked
-
                 - make a select box with label "what job sounds good to you?" > make option elements for
                     3 jobs in python c# js (game dev, data analyst, web dev)
                     business logic: 
@@ -105,16 +104,51 @@ objectives:
     </form>
   </div>
 
-
   <!-- Survery Results
     - make div to enclose the 3 results > add h3 header "Survery Results"
       > (non-MVP) add results i.e. <p>Question 1 answer: <span id="queston1Input">input result</span></p>
         > (non-MVP) add reasons why 1 vote for 1 language and not for another
-          > add h1 "based on your results, you should learn:" > reveal result
-            - make 3 divs class="hidden" id="python id="c#" id="javascript" 
+          > add h1 "based on your results, you should learn:" > 
+          (non-MVP) add business logic:
+          reveal result
+            - make 3 divs class="hidden" id="python id="c-sharp" id="javascript" 
               - add img to each
                 - add p element lorem ipsum content to each > (non-MVP) fill with real content
   -->
+  <div id="survey-results" class="general-box">
+    <h3>Survey Results</h3>
+    <h4>Based of your answers, we have determined you should learn:</h4>
+    <div id="python" class="hidden">
+      <h4>Python</h4>
+      <img src="./img/pythonImg.png" alt="Picture of python meme.">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+    <div id="javascript" class="hidden">
+      <h4>JavaScript</h4>
+      <img src="./img/javascriptImg.jpg" alt="Picture of javascript meme.">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+    <div id="c-sharp" class="hidden">
+      <h4>C#</h4>
+      <img src="./img/csharpImg.png" alt="Picture of c-sharp meme.">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+  </div>
 
   <!--  Reminder if you've reached this point: Have you added a README.md? -->
 
