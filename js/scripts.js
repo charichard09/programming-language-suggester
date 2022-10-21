@@ -56,9 +56,15 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
   }
 }
 
+
 //UI logic
 function getUserInput(event) {
   event.preventDefault();
+  //hide results 
+  document.getElementById("Python").setAttribute("class", "hidden");
+  document.getElementById("JavaScript").setAttribute("class", "hidden");
+  document.getElementById("C#").setAttribute("class", "hidden");
+
   // get input values from all 5 forms and assign to variables
   const nameInput = document.getElementById("name").value;
   const snakeYSInput = document.querySelector("input[name='radio-snakes']:checked").value;
@@ -72,12 +78,10 @@ function getUserInput(event) {
   // use user input to generate a result python, js, or c-sharp
   resultSpan.innerText = resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput);
   document.getElementById(resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput)).removeAttribute("class");
-
 }
 
 window.addEventListener("load", function() {
   let surveyForm = document.getElementById("survey-form");
 
   surveyForm.addEventListener("submit", getUserInput);
-
 });
