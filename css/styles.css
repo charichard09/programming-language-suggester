@@ -18,10 +18,21 @@ body {
   background-color: rgb(184, 175, 175);
 }
 
-#header {
-  background-color: aqua;
+img {
+  width: 450px;
+  height: 550px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.code-box {
-  vertical-align: auto;
+#header {
+  background-color: #24292F;
+  color: white;
+}
+
+.btn-primary {
+      color: white;
+      background-color: #24292F;
+      border-color: black;
 }
