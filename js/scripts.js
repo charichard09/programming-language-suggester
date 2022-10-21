@@ -15,7 +15,7 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
   }
   //snakes
   if (snake === "yes") {
-    pythonScore += 1;
+    pythonScore += 3;
   } else if (snake === "no") {
     javaScriptScore += 1;
     cSharpScore += 1;
@@ -36,7 +36,6 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
   } else if (codeImage === "cSharpCode") {
     cSharpScore += 1;
   }
-
   //funJob
   if (funJob === "Web Developer") {
     javaScriptScore += 1;
@@ -47,12 +46,14 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
   }
 
   // return the language with the highest score 
-  if (pythonScore > javaScriptScore && pythonScore > cSharpScore) {
+  if (pythonScore >= javaScriptScore && pythonScore >= cSharpScore) {
     return "Python";
-  } else if (javaScriptScore > pythonScore && javaScriptScore > cSharpScore) {
+  } else if (javaScriptScore >= pythonScore && javaScriptScore >= cSharpScore) {
     return "JavaScript";
-  } else if (cSharpScore > pythonScore && cSharpScore > javaScriptScore) {
+  } else if (cSharpScore >= pythonScore && cSharpScore >= javaScriptScore) {
     return "C#";
+  } else {
+    return "error";
   }
 }
 
