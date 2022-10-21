@@ -15,9 +15,10 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
   }
   //snakes
   if (snake === "yes") {
-    pythonScore += 3;
+    pythonScore += 1;
   } else if (snake === "no") {
     javaScriptScore += 1;
+  } else if (snake === "unsure"){
     cSharpScore += 1;
   }
   //color
@@ -45,7 +46,10 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
     cSharpScore += 1;
   }
 
-  // return the language with the highest score 
+  // return the language with the highest score. With 5 points to distribute, 1 language can be equal to another in points, but
+  // will ALWAYS be higher than the 3rd language (i.e. python (2pts) == javascript (2pts) but will always be higher than 
+  // csharp (1pt) since there is only ever 1 point left to spare if other 2 are equal), thus the logical if statements will always 
+  // return a language.
   if (pythonScore >= javaScriptScore && pythonScore >= cSharpScore) {
     return "Python";
   } else if (javaScriptScore >= pythonScore && javaScriptScore >= cSharpScore) {
