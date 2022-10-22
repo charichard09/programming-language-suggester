@@ -57,22 +57,22 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
 
 
 //UI logic
-function changeBackground(language) {
-  if (language === "Python") {
+function changeBackground(languageResult) {
+  if (languageResult === "Python") {
     document.body.style.backgroundColor = "blue";
     document.getElementById("header").style.backgroundColor = "yellow";
     document.getElementById("header").style.color = "black";
     document.querySelector("button").style.color = "black";
     document.querySelector("button").style.backgroundColor = "yellow";
     document.querySelector("button").style.borderColor = "black";
-  } else if (language === "C#") {
+  } else if (languageResult === "C#") {
     document.body.style.backgroundColor = "purple";
     document.getElementById("header").style.backgroundColor = "white";
     document.getElementById("header").style.color = "black";
     document.querySelector("button").style.color = "black";
     document.querySelector("button").style.backgroundColor = "white";
     document.querySelector("button").style.borderColor = "black";
-  } else if (language === "JavaScript") {
+  } else if (languageResult === "JavaScript") {
     document.body.style.backgroundColor = "yellow";
     document.getElementById("header").style.backgroundColor = "black";
     document.getElementById("header").style.color = "grey";
