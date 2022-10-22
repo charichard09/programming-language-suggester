@@ -19,7 +19,7 @@ give them a suggested programming language to learn base off of how they answere
 ## Setup/Installation Requirements
 
 * _Go to link:_
-* [Programming Language Selector](https://charichard09.github.io/programming-language-suggester)
+* [Programming Language Selector Webpage](https://charichard09.github.io/programming-language-suggester)
 * _Fill out form and hit Submit!_
 
 * _Alternatively:_
@@ -32,7 +32,7 @@ give them a suggested programming language to learn base off of how they answere
 
 ## License
 
-_If you have any issues or have questions, ideas or concerns please contact me at ![charichard09@gmail.com](mailto:charichard09@gmail.com)_
+_If you have any issues or have questions, ideas or concerns please contact me at [charichard09@gmail.com](mailto:charichard09@gmail.com)_
 
 MIT License
 
