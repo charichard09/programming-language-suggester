@@ -82,23 +82,24 @@ function changeBackground(languageResult) {
   }
 }
 
-function getUserInput(event) {
-  event.preventDefault();
-
+function hideResult() {
   document.getElementById("Python").setAttribute("class", "hidden");
   document.getElementById("JavaScript").setAttribute("class", "hidden");
   document.getElementById("C#").setAttribute("class", "hidden");
+}
+
+function getUserInput(event) {
+  event.preventDefault();
+  hideResult();
 
   const nameInput = document.getElementById("name").value;
   const snakeYSInput = document.querySelector("input[name='radio-snakes']:checked").value;
   const colorInput = document.querySelector("input[name='radio-color']:checked").value;
   const codeImageInput = document.querySelector("input[name='radio-codeImage']:checked").value;
   const funJobInput = document.getElementById("select-job").value;
-
-  let resultSpan = document.getElementById("result");
   let result = resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput)
 
-  resultSpan.innerText = result;
+  document.getElementById("insertResultHere").innerText = result;
   document.getElementById(result).removeAttribute("class");
   changeBackground(result);
 }
