@@ -1,5 +1,6 @@
 body {
   box-sizing: border-box;
+  font-family: sans-serif, Courier, monospace;
 }
 
 .name-box {
@@ -35,4 +36,8 @@ img {
       color: white;
       background-color: #24292F;
       border-color: black;
+}
+
+.intro {
+  font-size: larger;
 }
