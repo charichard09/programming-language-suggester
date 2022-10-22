@@ -2,7 +2,7 @@
 
 #### By _**Richard Cha**_
 
-#### _Web application that suggests a programming language based off results_
+#### _Web application that suggests a programming language based off of answers to questions_
 
 ## Technologies Used
 
