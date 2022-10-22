@@ -4,8 +4,6 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
   let javaScriptScore = 0;
   let cSharpScore = 0;
 
-  // write if statements for all 5 input results, each time adding to the Score of the 3 languages
-  //name
   if (name.length < 10) {
     pythonScore += 1;
   } else if (name.length >= 10 && name.length <= 15) {
@@ -13,7 +11,7 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
   } else if (name.length > 15) {
     cSharpScore += 1;
   }
-  //snakes
+
   if (snake === "yes") {
     pythonScore += 1;
   } else if (snake === "no") {
@@ -21,7 +19,7 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
   } else if (snake === "unsure"){
     cSharpScore += 1;
   }
-  //color
+
   if (color === "purple") {
     cSharpScore += 1;
   } else if (color === "blue") {
@@ -29,7 +27,7 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
   } else if (color === "yellow") {
     javaScriptScore += 1;
   }
-  //codeImage
+
   if (codeImage === "jsCode") {
     javaScriptScore += 1;
   } else if (codeImage === "pythonCode") {
@@ -37,7 +35,7 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
   } else if (codeImage === "cSharpCode") {
     cSharpScore += 1;
   }
-  //funJob
+
   if (funJob === "Web Developer") {
     javaScriptScore += 1;
   } else if (funJob === "Data Engineer") {
@@ -46,10 +44,6 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
     cSharpScore += 1;
   }
 
-  // return the language with the highest score. With 5 points to distribute, 1 language can be equal to another in points, but
-  // will ALWAYS be higher than the 3rd language (i.e. python (2pts) == javascript (2pts) but will always be higher than 
-  // csharp (1pt) since there is only ever 1 point left to spare if other 2 are equal), thus the logical if statements will always 
-  // return a language.
   if (pythonScore >= javaScriptScore && pythonScore >= cSharpScore) {
     return "Python";
   } else if (javaScriptScore >= pythonScore && javaScriptScore >= cSharpScore) {
@@ -90,23 +84,20 @@ function changeBackground(language) {
 
 function getUserInput(event) {
   event.preventDefault();
-  //hide results 
+
   document.getElementById("Python").setAttribute("class", "hidden");
   document.getElementById("JavaScript").setAttribute("class", "hidden");
   document.getElementById("C#").setAttribute("class", "hidden");
 
-  // get input values from all 5 forms and assign to variables
   const nameInput = document.getElementById("name").value;
   const snakeYSInput = document.querySelector("input[name='radio-snakes']:checked").value;
   const colorInput = document.querySelector("input[name='radio-color']:checked").value;
   const codeImageInput = document.querySelector("input[name='radio-codeImage']:checked").value;
   const funJobInput = document.getElementById("select-job").value;
 
-  // get span object to (later, insert result to innerText)
   let resultSpan = document.getElementById("result");
   let result = resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput)
 
-  // use user input to generate a result python, js, or c-sharp
   resultSpan.innerText = result;
   document.getElementById(result).removeAttribute("class");
   changeBackground(result);
