@@ -50,9 +50,7 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
     return "JavaScript";
   } else if (cSharpScore >= pythonScore && cSharpScore >= javaScriptScore) {
     return "C#";
-  } else {
-    return "error";
-  }
+  } 
 }
 
 
