@@ -3,10 +3,6 @@ body {
   font-family: sans-serif, Courier, monospace;
 }
 
-.name-box {
-  text-align: center;
-}
-
 .hidden {
   display: none;
 }

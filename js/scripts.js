@@ -1,5 +1,5 @@
 //Business logic
-function resultGenerator(name, snake, color, codeImage, funJob) {
+function resultGenerator(name, snake, color, codeImage, funJob, freelance, wouldYouRather) {
   let pythonScore = 0;
   let javaScriptScore = 0;
   let cSharpScore = 0;
@@ -41,6 +41,22 @@ function resultGenerator(name, snake, color, codeImage, funJob) {
   } else if (funJob === "Data Engineer") {
     pythonScore += 1;
   } else if (funJob === "Game Developer") {
+    cSharpScore += 1;
+  }
+
+  if (freelance === "Very Important") {
+    javaScriptScore += 1;
+  } else if (freelance === "Somewhat Important") {
+    pythonScore += 1;
+  } else if (freelance === "Not Important") {
+    cSharpScore += 1;
+  }
+
+  if (wouldYouRather === "run") {
+    javaScriptScore += 1;
+  } else if (wouldYouRather === "horse duck") {
+    pythonScore += 1;
+  } else if (wouldYouRather === "duck horse") {
     cSharpScore += 1;
   }
 
@@ -95,7 +111,9 @@ function getUserInput(event) {
   const colorInput = document.querySelector("input[name='radio-color']:checked").value;
   const codeImageInput = document.querySelector("input[name='radio-codeImage']:checked").value;
   const funJobInput = document.getElementById("select-job").value;
-  let result = resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput)
+  const freelanceInput = document.getElementById("select-freelance").value;
+  const wouldYouRatherInput = document.getElementById("select-wouldYouRather").value;
+  let result = resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput, freelanceInput, wouldYouRatherInput)
 
   document.getElementById("insertResultHere").innerText = result;
   document.getElementById(result).removeAttribute("class");
