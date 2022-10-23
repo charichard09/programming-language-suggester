@@ -13,7 +13,7 @@
 
 ## Description
 
-_This is a web application that will provide a series of 5 questions for a user to fill out, then 
+_This is a web application that will provide a series of 7 questions for a user to fill out, then 
 give them a suggested programming language to learn based off of how they answered._
 
 ## Setup/Installation Requirements
