@@ -71,6 +71,30 @@ function resultGenerator(name, snake, color, codeImage, funJob, freelance, would
 
 
 //UI logic
+function hideResult() {
+  document.getElementById("Python").setAttribute("class", "hidden");
+  document.getElementById("JavaScript").setAttribute("class", "hidden");
+  document.getElementById("C#").setAttribute("class", "hidden");
+}
+
+function getUserInput(event) {
+  event.preventDefault();
+  hideResult();
+
+  const nameInput = document.getElementById("name").value;
+  const snakeYSInput = document.querySelector("input[name='radio-snakes']:checked").value;
+  const colorInput = document.querySelector("input[name='radio-color']:checked").value;
+  const codeImageInput = document.querySelector("input[name='radio-codeImage']:checked").value;
+  const funJobInput = document.getElementById("select-job").value;
+  const freelanceInput = document.getElementById("select-freelance").value;
+  const wouldYouRatherInput = document.getElementById("select-wouldYouRather").value;
+  let result = resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput, freelanceInput, wouldYouRatherInput)
+
+  document.getElementById("insertResultHere").innerText = result;
+  document.getElementById(result).removeAttribute("class");
+  changeBackground(result);
+}
+
 function changeBackground(languageResult) {
   if (languageResult === "Python") {
     document.body.style.backgroundColor = "blue";
@@ -94,30 +118,6 @@ function changeBackground(languageResult) {
     document.querySelector("button").style.backgroundColor = "black";
     document.querySelector("button").style.borderColor = "black";
   }
-}
-
-function hideResult() {
-  document.getElementById("Python").setAttribute("class", "hidden");
-  document.getElementById("JavaScript").setAttribute("class", "hidden");
-  document.getElementById("C#").setAttribute("class", "hidden");
-}
-
-function getUserInput(event) {
-  event.preventDefault();
-  hideResult();
-
-  const nameInput = document.getElementById("name").value;
-  const snakeYSInput = document.querySelector("input[name='radio-snakes']:checked").value;
-  const colorInput = document.querySelector("input[name='radio-color']:checked").value;
-  const codeImageInput = document.querySelector("input[name='radio-codeImage']:checked").value;
-  const funJobInput = document.getElementById("select-job").value;
-  const freelanceInput = document.getElementById("select-freelance").value;
-  const wouldYouRatherInput = document.getElementById("select-wouldYouRather").value;
-  let result = resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput, freelanceInput, wouldYouRatherInput)
-
-  document.getElementById("insertResultHere").innerText = result;
-  document.getElementById(result).removeAttribute("class");
-  changeBackground(result);
 }
 
 function imageSelected() {
