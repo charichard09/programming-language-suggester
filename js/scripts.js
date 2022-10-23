@@ -120,8 +120,27 @@ function getUserInput(event) {
   changeBackground(result);
 }
 
+function imageSelected() {
+  document.getElementById("codeImage1").addEventListener("click", function () {
+    document.getElementById("badge1").setAttribute("class", "badge badge-success");
+    document.getElementById("badge2").setAttribute("class", "badge badge-success hidden");
+    document.getElementById("badge3").setAttribute("class", "badge badge-success hidden");
+  });
+  document.getElementById("codeImage2").addEventListener("click", function () {
+    document.getElementById("badge1").setAttribute("class", "badge badge-success hidden");
+    document.getElementById("badge2").setAttribute("class", "badge badge-success");
+    document.getElementById("badge3").setAttribute("class", "badge badge-success hidden");
+  });
+  document.getElementById("codeImage3").addEventListener("click", function () {
+    document.getElementById("badge1").setAttribute("class", "badge badge-success hidden");
+    document.getElementById("badge2").setAttribute("class", "badge badge-success hidden");
+    document.getElementById("badge3").setAttribute("class", "badge badge-success");
+  });
+}
+
 window.addEventListener("load", function() {
   let surveyForm = document.getElementById("survey-form");
 
   surveyForm.addEventListener("submit", getUserInput);
+  imageSelected();
 });
