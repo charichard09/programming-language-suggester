@@ -1,62 +1,62 @@
 //Business logic
-function resultGenerator(name, snake, color, codeImage, funJob, freelance, wouldYouRather) {
+function resultGenerator(inputArray) {
   let pythonScore = 0;
   let javaScriptScore = 0;
   let cSharpScore = 0;
 
-  if (name.length < 10) {
+  if (inputArray[0].length < 10) {
     pythonScore += 1;
-  } else if (name.length >= 10 && name.length <= 15) {
+  } else if (inputArray[0].length >= 10 && inputArray[0].length <= 15) {
     javaScriptScore += 1;
-  } else if (name.length > 15) {
+  } else if (inputArray[0].length > 15) {
     cSharpScore += 1;
   }
 
-  if (snake === "yes") {
+  if (inputArray[1] === "yes") {
     pythonScore += 1;
-  } else if (snake === "no") {
+  } else if (inputArray[1] === "no") {
     javaScriptScore += 1;
-  } else if (snake === "unsure"){
+  } else if (inputArray[1] === "unsure"){
     cSharpScore += 1;
   }
 
-  if (color === "purple") {
+  if (inputArray[2] === "purple") {
     cSharpScore += 1;
-  } else if (color === "blue") {
+  } else if (inputArray[2] === "blue") {
     pythonScore += 1;
-  } else if (color === "yellow") {
+  } else if (inputArray[2] === "yellow") {
     javaScriptScore += 1;
   }
 
-  if (codeImage === "jsCode") {
+  if (inputArray[3] === "jsCode") {
     javaScriptScore += 1;
-  } else if (codeImage === "pythonCode") {
+  } else if (inputArray[3] === "pythonCode") {
     pythonScore += 1;
-  } else if (codeImage === "cSharpCode") {
+  } else if (inputArray[3] === "cSharpCode") {
     cSharpScore += 1;
   }
 
-  if (funJob === "Web Developer") {
+  if (inputArray[4] === "Web Developer") {
     javaScriptScore += 1;
-  } else if (funJob === "Data Engineer") {
+  } else if (inputArray[4] === "Data Engineer") {
     pythonScore += 1;
-  } else if (funJob === "Game Developer") {
+  } else if (inputArray[4] === "Game Developer") {
     cSharpScore += 1;
   }
 
-  if (freelance === "Very Important") {
+  if (inputArray[5] === "Very Important") {
     javaScriptScore += 1;
-  } else if (freelance === "Somewhat Important") {
+  } else if (inputArray[5] === "Somewhat Important") {
     pythonScore += 1;
-  } else if (freelance === "Not Important") {
+  } else if (inputArray[5] === "Not Important") {
     cSharpScore += 1;
   }
 
-  if (wouldYouRather === "run") {
+  if (inputArray[6] === "run") {
     javaScriptScore += 1;
-  } else if (wouldYouRather === "horse duck") {
+  } else if (inputArray[6] === "horse duck") {
     pythonScore += 1;
-  } else if (wouldYouRather === "duck horse") {
+  } else if (inputArray[6] === "duck horse") {
     cSharpScore += 1;
   }
 
@@ -113,11 +113,8 @@ function getUserInput(event) {
   const funJobInput = document.getElementById("select-job").value;
   const freelanceInput = document.getElementById("select-freelance").value;
   const wouldYouRatherInput = document.getElementById("select-wouldYouRather").value;
-  let result = resultGenerator(nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput, freelanceInput, wouldYouRatherInput)
 
-  document.getElementById("insertResultHere").innerText = result;
-  document.getElementById(result).removeAttribute("class");
-  changeBackground(result);
+  return [nameInput, snakeYSInput, colorInput, codeImageInput, funJobInput, freelanceInput, wouldYouRatherInput]
 }
 
 function imageSelected() {
@@ -140,7 +137,13 @@ function imageSelected() {
 
 window.addEventListener("load", function() {
   let surveyForm = document.getElementById("survey-form");
+  const result = resultGenerator(surveyForm.addEventListener("submit", getUserInput));
 
-  surveyForm.addEventListener("submit", getUserInput);
+  document.getElementById("insertResultHere").innerText = result;
+
+  document.getElementById(result).removeAttribute("class");
+  
+  changeBackground(result);
+
   imageSelected();
 });
